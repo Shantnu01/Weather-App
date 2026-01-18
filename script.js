@@ -39,7 +39,7 @@ output.innerHTML = `
 
 
 const Cord=(va)=>{
-    let cordurl=`http://api.openweathermap.org/geo/1.0/direct?q=${va}&limit=1&appid=81ab662082b3b2bf5b192d6313f5bcbe`;
+    let cordurl=`https://api.openweathermap.org/geo/1.0/direct?q=${va}&limit=1&appid=81ab662082b3b2bf5b192d6313f5bcbe`;
     fetch(cordurl).then((e)=>{
     return e.json();}
     ).then((e)=>{
