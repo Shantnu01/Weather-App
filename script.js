@@ -55,3 +55,25 @@ document.getElementById("place").addEventListener("keydown", (event) => {
     getInput();
   }
 });
+
+const modeToggle = document.getElementById('dn');
+const body = document.body;
+
+modeToggle.addEventListener('change', () => {
+    if (!modeToggle.checked) {
+        body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+    }
+});
+
+// Optional: Check for saved user preference on page load
+window.onload = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        modeToggle.checked = true;
+        body.classList.add('light-mode');
+    }
+};
